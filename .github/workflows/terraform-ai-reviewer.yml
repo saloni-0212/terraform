@@ -57,7 +57,13 @@ jobs:
         working-directory: terraform
         run: |
           tflint --init
-          tflint --format json > tflint.json
+          tflint --format json > tflint.json || true
+
+      - name: Upload TFLint Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: tflint-report
+          path: terraform/tflint.json
 
       - name: Run Checkov
         uses: bridgecrewio/checkov-action@v12
