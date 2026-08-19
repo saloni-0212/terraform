@@ -80,7 +80,7 @@ jobs:
 
       #- name: Terraform Plan JSON
       #  working-directory: terraform
-      #  run: terraform show -json tfplan > tfplan.json 
+      #  run: terraform show -json tfplan > tfplan.json
 
       - name: Check Terraform Plan
         working-directory: terraform
